@@ -1,0 +1,13 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  become: true
+  vars:
+    repo: https://github.com/iwantm/QAAnsible.git
+    folder_name: QAAnsible
+
+  tasks:
+  - name: Clone repo
+    git:
+      repo: "{{repo}}"
+      dest: "{{folder_name}}"
